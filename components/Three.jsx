@@ -1,0 +1,24 @@
+import { useState, Suspense } from "react";
+import { motion, MotionConfig } from "framer-motion";
+import { Scene } from "./Scene";
+import { transition } from "./Setting";
+
+export default function Three() {
+  const [isFullscreen, setFullscreen] = useState(false);
+
+  return (
+    <MotionConfig transition={transition}>
+      <div
+        data-is-fullscreen={isFullscreen}
+        onClick={() => setFullscreen(!isFullscreen)}
+      >
+        <motion.h1 layout children="<LayoutCamera />" />
+        <motion.div className="container" layout>
+          <Suspense fallback={null}>
+            <Scene isFullscreen={isFullscreen} />
+          </Suspense>
+        </motion.div>
+      </div>
+    </MotionConfig>
+  );
+}

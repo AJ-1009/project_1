@@ -1,0 +1,17 @@
+.hamburger{
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+}
+.burger{
+    margin: 5px 0px;
+    height: 3px;
+    background-color: black;
+}
+.nav-content{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
